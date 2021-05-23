@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BasicModel.Models.Book> 
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Book Information</h2>
+<div>
+    <table class="table">
+        <tr>
+            <td style="width:30%"></td>
+            <td style="width:30%">Book Id</td>
+            <td style="width:30%">Book Name</td>
+            <td style="width:30%">Book Price</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <!--
+            <tr>
+                <td>@item.ISBN</td>
+                <td>@item.Title</td>
+                <td>@item.Price</td>
+            </tr>-->
+            <tr>
+                <td><img src="@Url.Content(item.picUrl)" style="width:100px; height:100px"/></td>
+                <td>@Html.ActionLink(item.ISBN.ToString(), "Details", new { id = @item.ISBN })</td>
+                <td>@item.Title</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+

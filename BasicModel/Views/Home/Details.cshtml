@@ -1,0 +1,16 @@
+﻿@model BasicModel.Models.Book
+@**@
+<h2>Book Name : @Model.Title</h2><hr/>
+<div class="card">
+    <div class="card-header" style="background-color:darkcyan;color:black">
+        Book ID : @Model.ISBN  &nbsp; @Model.Title <br />
+    </div>
+    <div class="card-block">
+        <img src="@Url.Content(@Model.picUrl)" style="width:100px; height:100px" />
+        <p class="card-text">@Model.Discription</p>
+    </div>
+    <div class="card-footer" stye="color:blue">Book Price : @Model.Price</div>
+</div>
+<p>
+    @Html.ActionLink("HOME","Index","Home")
+</p>
